@@ -4,39 +4,18 @@ import {
   } from '@nestjs/common';
   import { Request, Response } from 'express';
   import { ProxyService } from './proxy.service';
-  import { Public } from '../common/public.decorator';
   
   @ApiTags('Proxy')
   @Controller()
   export class ProxyController {
     constructor(private readonly proxyService: ProxyService) {}
-    @Public()
-    @Response({ status: 200, description: 'Petición procesada correctamente' })
-    async proxyAuth( req: Request,  res: Response) {
-      const path = req.url.replace('/api/auth', '');
-      
-      try {
-        const response = await this.proxyService.proxyRequest(
-          path,
-          req.method,
-          req.body,
-          req.headers
-        );
-        
-        res.status(response.status).json(response.data);
-      } catch (error) {
-        this.handleProxyError(error, res);
-      }
-    }
-  
-
     @Response({ status: 200, description: 'Petición procesada correctamente' })
     async proxyTasks( req: Request,  res: Response) {
-      const path = req.url.replace('/api/tasks', '');
+      const path = req.url.replace('/api/webs', '');
       
       try {
         const response = await this.proxyService.proxyRequest(
-          'tasks',
+          'webs',
           path,
           req.method,
           req.body,
@@ -54,12 +33,12 @@ import {
     }
   
     @Response({ status: 200, description: 'Petición procesada correctamente' })
-    async proxyUsers( req: Request, res: Response) {
-      const path = req.url.replace('/api/users', '');
+    async proxyWeb( req: Request, res: Response) {
+      const path = req.url.replace('/api/cliente', '');
       
       try {
         const response = await this.proxyService.proxyRequest(
-          'users',
+          'clientes',
           path,
           req.method,
           req.body,

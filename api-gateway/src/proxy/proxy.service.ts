@@ -4,16 +4,16 @@ import axios, { AxiosResponse } from 'axios';
 
 @Injectable()
 export class ProxyService {
-  private readonly tasksServiceUrl: string;
-  private readonly usersServiceUrl: string;
+  private readonly webServiceUrl: string;
+  private readonly clienteServiceUrl: string;
 
   constructor(private configService: ConfigService) {
-    this.tasksServiceUrl = this.configService.get<string>('TASKS_SERVICE_URL') || 'http://tasks-service:3002';
-    this.usersServiceUrl = this.configService.get<string>('USERS_SERVICE_URL') || 'http://users-service:3003';
+    this.webServiceUrl = this.configService.get<string>('WEBS_SERVICE_URL') || 'http://webs-service:3002';
+    this.clienteServiceUrl = this.configService.get<string>('CLIENTES_SERVICE_URL') || 'http://clientes-service:3003';
   }
 
   async proxyRequest(
-    service: 'tasks' | 'users',
+    service: 'webs' | 'clientes',
     path: string,
     method: string,
     data?: any,
@@ -37,24 +37,24 @@ export class ProxyService {
       return response;
     } catch (error) {
       if (error.response) {
-        // El servidor respondió con un código de error
+        
         throw error;
       } else if (error.request) {
-        // La petición fue hecha pero no hubo respuesta
+       
         throw new BadGatewayException(`Servicio ${service} no disponible`);
       } else {
-        // Error en la configuración de la petición
+       
         throw new BadGatewayException(`Error al comunicarse con el servicio ${service}`);
       }
     }
   }
 
-  private getServiceUrl(service: 'auth' | 'tasks' | 'users'): string {
+  private getServiceUrl(service: 'webs' | 'clientes'): string {
     switch (service) {
-      case 'tasks':
-        return this.tasksServiceUrl;
-      case 'users':
-        return this.usersServiceUrl;
+      case 'webs':
+        return this.webServiceUrl;
+      case 'clientes':
+        return this.clienteServiceUrl;
       default:
         throw new Error(`Servicio desconocido: ${service}`);
     }
