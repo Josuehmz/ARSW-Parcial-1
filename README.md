@@ -4,7 +4,7 @@
 ## Descripción del proyecto
 - Este Gateway bajo el diseño pensado actua como un punto de entrada único para todos los servicios, al que se conecta el cliente de Java y el servicio web Front-end realizado con Angular.
 ## Diagrama
-![img2](img/image2.jpeg)
+![img2](img/image2.png)
 
 En este repositorio se desarrolla el API central
 ## 📦 Estructura del API
@@ -42,7 +42,7 @@ cat ~/.ssh/id_ed25519.pub
 
 # Clonar usando SSH
 git clone git@github.com:tu-usuario/mi-repositorio.git
- ![img](img/image.jpeg)
+ ![img](img/image.png)
 
  ## URLs de Github
  - https://github.com/Josuehmz/ARSW-Parcial-1
