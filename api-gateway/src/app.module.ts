@@ -9,7 +9,6 @@ import { HealthController } from './health.controller';
       isGlobal: true,
       envFilePath: '.env',
     }),
-    AuthModule,
     ProxyModule,
   ],
   controllers: [HealthController],

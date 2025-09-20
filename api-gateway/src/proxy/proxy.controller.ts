@@ -105,7 +105,7 @@ function ApiTags(arg0: string): (target: typeof ProxyController, context: ClassD
     throw new Error('Function not implemented.');
 }
 
-
-function ApiOperation(arg0: { summary: string; }): (target: (req: Request, res: Response) => Promise<void>, context: ClassMethodDecoratorContext<ProxyController, (req: Request, res: Response) => Promise<void>> & { ...; }) => void | ((req: Request, res: Response) => Promise<void>) {
+function ApiOperation(arg0: { summary: string; }): (target: (req: Request, res: Response) => Promise<void>, context: ClassMethodDecoratorContext<ProxyController, (req: Request, res: Response) => Promise<void>> & { any; }) => void | ((req: Request, res: Response) => Promise<void>) {
     throw new Error('Function not implemented.');
 }
+

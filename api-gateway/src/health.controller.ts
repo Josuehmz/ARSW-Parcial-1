@@ -32,11 +32,10 @@ export class HealthController {
   }
 }
 
+function ApiOperation(arg0: { summary: string; }): (target: () => { status: string; message: string; timestamp: string; version: string; services: { tasks: string; users: string; }; }, context: ClassMethodDecoratorContext<HealthController, () => { status: string; message: string; timestamp: string; version: string; services: { tasks: string; users: string; }; }> & { ...; }) => void | (() => { status: string; message: string; timestamp: string; version: string; services: { tasks: string; users: string; }; }) {
+  throw new Error('Function not implemented.');
+}
 function ApiTags(arg0: string): (target: typeof HealthController, context: ClassDecoratorContext<typeof HealthController>) => void | typeof HealthController {
   throw new Error('Function not implemented.');
 }
 
-
-function ApiOperation(arg0: { summary: string; }): (target: () => { status: string; message: string; timestamp: string; version: string; services: { auth: string; tasks: string; users: string; }; }, context: ClassMethodDecoratorContext<HealthController, () => { status: string; message: string; timestamp: string; version: string; services: { auth: string; tasks: string; users: string; }; }> & { ...; }) => void | (() => { status: string; message: string; timestamp: string; version: string; services: { auth: string; tasks: string; users: string; }; }) {
-  throw new Error('Function not implemented.');
-}
