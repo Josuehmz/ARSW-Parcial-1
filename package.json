@@ -1,0 +1,36 @@
+{
+    "name": "arsw-parcial-1",
+    "version": "1.0.0",
+    "description": "Parcial 1 de arsw",
+    "main": "index.js",
+    "scripts": {
+        "start": "docker compose up --build",
+        "start:detached": "docker compose up --build -d",
+        "stop": "docker compose down",
+        "logs": "docker compose logs -f",
+        "clean": "docker compose down -v && docker compose up --build"
+    },
+    "keywords": [
+        "microservices",
+        "nestjs",
+        "task-management",
+        "docker",
+        "postgresql",
+        "mongodb",
+        "jwt"
+    ],
+    "author": "Desarrollador Backend - Prueba Técnica",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^20.19.17",
+        "typescript": "^5.3.0"
+    },
+    "dependencies": {
+        "@nestjs/axios": "^4.0.1",
+        "@nestjs/common": "^11.1.6",
+        "@nestjs/config": "^4.0.2",
+        "@nestjs/core": "^11.1.6",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.2"
+    }
+}
