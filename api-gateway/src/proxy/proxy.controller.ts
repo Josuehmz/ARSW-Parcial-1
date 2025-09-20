@@ -1,8 +1,5 @@
 import { 
-    Controller, 
-    All, 
-    Req, 
-    Res, 
+    Controller,  
     HttpStatus
   } from '@nestjs/common';
   import { Request, Response } from 'express';
@@ -14,9 +11,8 @@ import {
   export class ProxyController {
     constructor(private readonly proxyService: ProxyService) {}
     @Public()
-    @ApiOperation({ summary: 'Proxy para el servicio de autenticación' })
     @Response({ status: 200, description: 'Petición procesada correctamente' })
-    async proxyAuth(@Req() req: Request, @Res() res: Response) {
+    async proxyAuth( req: Request,  res: Response) {
       const path = req.url.replace('/api/auth', '');
       
       try {
@@ -33,9 +29,9 @@ import {
       }
     }
   
-    @ApiOperation({ summary: 'Proxy para ' })
+
     @Response({ status: 200, description: 'Petición procesada correctamente' })
-    async proxyTasks(@Req() req: Request, @Res() res: Response) {
+    async proxyTasks( req: Request,  res: Response) {
       const path = req.url.replace('/api/tasks', '');
       
       try {
@@ -57,9 +53,8 @@ import {
       }
     }
   
-    @ApiOperation({ summary: 'Proxy para el servicio de usuarios' })
     @Response({ status: 200, description: 'Petición procesada correctamente' })
-    async proxyUsers(@Req() req: Request, @Res() res: Response) {
+    async proxyUsers( req: Request, res: Response) {
       const path = req.url.replace('/api/users', '');
       
       try {
