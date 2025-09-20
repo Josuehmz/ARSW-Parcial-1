@@ -25,7 +25,6 @@ async function bootstrap() {
   await app.listen(port);
   
   console.log(`🚀 API Gateway ejecutándose en: http://localhost:${port}`);
-  console.log(`📚 Documentación API disponible en: http://localhost:${port}/api/docs`);
 }
 
 bootstrap();
