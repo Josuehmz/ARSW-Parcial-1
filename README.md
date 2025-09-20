@@ -37,8 +37,8 @@ ssh-keygen -t ed25519 -C "tu-email@gmail.com"
 cat ~/.ssh/id_ed25519.pub
 
 ## Agregar la clave a GitHub:
-## GitHub → Settings → SSH and GPG keys → New SSH key
-## Pega el contenido del archivo .pub
+- GitHub → Settings → SSH and GPG keys → New SSH key
+- Pega el contenido del archivo .pub
 
 # Clonar usando SSH
 git clone git@github.com:tu-usuario/mi-repositorio.git
